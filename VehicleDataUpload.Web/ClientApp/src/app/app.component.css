@@ -1,0 +1,17 @@
+.pageHeader {
+    padding-left:15px;
+    padding-top:10pt;
+    font-family: Verdana;
+    font-weight: bold;
+    color: navy;
+    font-size:large;
+}
+#outer {
+  width: 100%;
+  text-align: left;
+}
+
+.inner {
+  padding-right:5pt;
+  display: inline-block;
+}

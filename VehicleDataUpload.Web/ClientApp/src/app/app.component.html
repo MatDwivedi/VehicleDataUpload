@@ -1,0 +1,27 @@
+<!--<app-nav-bar></app-nav-bar>-->
+<div class="pageHeader">Vehicle Data Upload</div>
+<hr />
+<div class="container" style="margin-left:0px">
+    <div id="outer">
+      <div class="inner">
+        <p style="font-weight:400">Please select a file by clicking Upload: </p>
+      </div>
+      <div class="inner">
+        <label style="background-color: #a9aecb;border-color:midnightblue;" class="btn btn-success btn-sm m-0 pull-right">
+          Upload
+          <input style="display: none;" type="file" (change)="uploadFile($event)" placeholder="Upload file" accept=".csv" class="mb-2">
+        </label>
+      </div>
+    </div>
+    <div *ngIf="result && dataReturned">
+      <div class="mb-2">
+        <app-sales-data-grid [salesRecords]="result.fileData.dataRecords"></app-sales-data-grid>
+      </div>
+      <div class="mb-3">
+        <app-most-sold-vehicle [mostSoldVehicle]="result.fileData.mostSoldVehicle"></app-most-sold-vehicle>
+      </div>
+    </div>
+    <div *ngIf="errorMessage">
+        <app-error [errorMessage]="errorMessage"></app-error>
+    </div>
+</div>
